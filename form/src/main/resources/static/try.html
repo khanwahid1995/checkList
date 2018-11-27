@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro:700";
+
+*, *::before, *::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.dark {
+	background: #24252A;
+}
+
+.flex {
+	min-height: 50vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+a.bttn {
+	margin-bottom: 24em;
+	color: #FF0072;
+	text-decoration: none;
+	-webkit-transition: 0.3s all ease;
+	transition: 0.3s ease all;
+}
+
+a.bttn:hover {
+	color: #FFF;
+}
+
+a.bttn:focus {
+	color: #FFF;
+}
+
+a.bttn-dark {
+	color: #644cad;
+	text-decoration: none;
+	-webkit-transition: 0.3s all ease;
+	transition: 0.3s ease all;
+}
+
+a.bttn-dark:hover {
+	color: #FFF;
+}
+
+a.bttn-dark:focus {
+	color: #FFF;
+}
+
+.bttn {
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: inline-block;
+	text-align: center;
+	width: 150px;
+	font-weight: bold;
+	padding: 5px 0px;
+	border: 3px solid #FF0072;
+	border-radius: 2px;
+	position: relative;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bttn:before {
+	-webkit-transition: 0.5s all ease;
+	transition: 0.5s all ease;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: 50%;
+	bottom: 0;
+	opacity: 0;
+	content: '';
+	background-color: #FF0072;
+	z-index: -2;
+}
+
+.bttn:hover:before {
+	-webkit-transition: 0.5s all ease;
+	transition: 0.5s all ease;
+	left: 0;
+	right: 0;
+	opacity: 1;
+}
+
+.bttn:focus:before {
+	transition: 0.5s all ease;
+	left: 0;
+	right: 0;
+	opacity: 1;
+}
+
+.bttn-dark {
+	font-size: 18px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: inline-block;
+	text-align: center;
+	width: 270px;
+	font-weight: bold;
+	padding: 14px 0px;
+	border: 3px solid #644cad;
+	border-radius: 2px;
+	position: relative;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+	z-index: 2;
+}
+
+.bttn-dark:before {
+	-webkit-transition: 0.5s all ease;
+	transition: 0.5s all ease;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: 50%;
+	bottom: 0;
+	opacity: 0;
+	content: '';
+	background-color: #644cad;
+	z-index: -1;
+}
+
+.bttn-dark:hover:before {
+	-webkit-transition: 0.5s all ease;
+	transition: 0.5s all ease;
+	left: 0;
+	right: 0;
+	opacity: 1;
+}
+
+.bttn-dark:focus:before {
+	-webkit-transition: 0.5s all ease;
+	transition: 0.5s all ease;
+	left: 0;
+	right: 0;
+	opacity: 1;
+}
+</style>
+</head>
+<body style="background-color: #c2d6d6;">
+
+	<div class="container-fluid">
+		<h1 align=center>Check Form</h1>
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading ">
+							<label class="col-sm-4">Task #</label> <input type="number"
+								id="taskNo" placeholder="Task No">
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<label class="col-sm-4">Description</label>
+								<textarea rows="4" cols="50" id="taskDescription"
+									placeholder="Task Description"></textarea>
+							</div>
+							<div class="row">
+								<label class="col-sm-4">Assignee</label> <input type="text"
+									id="assignee">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-sm-6"></div>
+							<div class="col-sm-2" align=center>
+								<label>Self</label>
+							</div>
+							<div class="col-sm-2">
+								<input type="text" id="peerName" placeholder="PeerName">
+							</div>
+						</div>
+
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Rule 1</label>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="1" value="true"><br>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="1" value="true"><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Rule 2</label>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="2" value="true"><br>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="2" value="true"><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Rule 3</label>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="3" value="true"><br>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="3" value="true"><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Rule 4</label>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="4" value="true"><br>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="4" value="true"><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Rule 5</label>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="5" value="true"><br>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="5" value="true"><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Rule 6</label>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="6" value="true"><br>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="6" value="true"><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Rule 7</label>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="7" value="true"><br>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="7" value="true"><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Rule 8</label>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="8" value="true"><br>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="8" value="true"><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Rule 9</label>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="9" value="true"><br>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="9" value="true"><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Rule 10</label>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="10" value="true"><br>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="10" value="true"><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<label>Rule 11</label>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="11" value="true"><br>
+							</div>
+							<div class="col-sm-2" align=center>
+								<input type="checkbox" name="11" value="true"><br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row button">
+				<div class="col-sm-8"></div>
+				<div class="col-sm-2">
+					<div class="flex">
+						<a href="#0" class="bttn">Submit</a>
+					</div>
+				</div>
+				<div class="flex">
+					<a href="#0" class="bttn">Cancel</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-2"></div>
+
+	</div>
+
+
+</body>
+</html>
